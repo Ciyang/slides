@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Probabilistic modelling of contextual interpretations of gradable adjectives</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ciyang Qing" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: center, middle, title-slide
+
+# Probabilistic modeling of contextual interpretations of gradable adjectives 
+
+
+### Ciyang Qing
+
+&lt;br /&gt;
+
+#### May 3, 2019
+
+---
+
+# Overview
+
+Main research interest: context-sensitive interpretations 
+
+- Implications for the semantics/pragmatics interface (Qing, 2019)
+
+.footnote[Qing, C. (2019). *Semantic underspecification and its contextual resolution.* Ph.D. thesis, Stanford University.]
+
+&lt;br /&gt;
+
+A case study: contextual interpretations of gradable adjectives (GAs)
+
+- Theoretical background
+
+- A probabilistic model 
+
+- Experimental validation 
+
+- Summary and further discussion
+
+
+---
+
+# Gradable adjectives 
+
+Contextual interpretations of (positive forms of) GAs
+
+- `\([[A]]^C = \lambda x. \mu_A(x) \geq \theta_C\)`
+
+- E.g., `\([[\text{John is tall}]]^C = \textbf{height}(\textbf{j}) \geq \theta_C\)`
+
+&lt;br /&gt;
+
+Some terminology
+
+- *Context*: situation (in the intuitive sense) in which an utterance is made 
+
+- *(Contextual) parameter* `\(\Pi\)`: Formal representation of (the relevant aspect of) such a situation
+
+
+---
+
+# Semantics vs metasemantics
+
+
+- Positive form: `\([[A]]^C = \lambda x. \mu_A(x) \geq \theta_C\)`
+
+Challenge: Exactly how is `\(\theta\)` determined in context?
+
+--
+
+&lt;br /&gt;
+
+A full theory of GAs needs to address two problems
+
+The semantic problem: 
+
+- Define the formal contextual parameter `\(\Pi\)` and specify how `\(\theta\)` is determined by `\(\Pi\)`
+
+--
+
+The metasemantic problem:
+
+- Specify how the formal parameter `\(\Pi\)` is determined from the (intuitive notion of) context
+
+
+
+---
+
+# Addressing the semantic problem
+
+Optimal Threshold Model (OTM) (based on Qing &amp; Franke, 2014a)
+
+.footnote[Qing, C., &amp; Franke, M. (2014a). Gradable adjectives, vagueness, and optimal language use: A speaker-oriented model. *SALT 24*]
+
+--
+
+- Formal contextual parameter: `\(\kappa\)`, a *comparison distribution* (a probabilistic generalization of a comparison class). 
+
+  + E.g., height distribution of US adult males / NBA players
+
+--
+
+- Semantics: `\(\theta = \textbf{Opt}(\kappa) = \text{arg}\max_\theta U(\theta, \kappa)\)` 
+
+  + I.e., `\(\textbf{Opt}\)` maps `\(\kappa\)` to a threshold `\(\theta\)` that 
+     maximizes the communicative utility of using `\(\theta\)` for `\(\kappa\)`.
+
+
+---
+
+# Communicative utility of using a threshold 
+
+A speech community needs to use a GA to communicate degrees drawn from a comparison distribution `\(\kappa\)`
+(e.g., use *tall* to communicate men's heights)
+
+--
+
+Suppose Sp and L produce and interpret the GA literally, using threshold `\(\theta\)`
+
+--
+
+Communicative utility `\(U(\theta, \kappa)\)`: How likely will a speaker make a listener correctly guess a degree `\(d\)` randomly drawn from `\(\kappa\)`?
+
+--
+
+- If `\(d &lt; \theta\)`, GA is false. Sp says nothing. L guesses `\(d\)` correctly with probability `\({\color{red}{\kappa(d)}}\)`
+
+--
+
+- If `\(d \geq \theta\)`, GA is true. Sp uses the GA. L guesses `\(d\)` correctly with probability `\({\color{blue}{\kappa(d \mid d \geq \theta)}}\)`
+
+
+--
+
+Taking the average, we have the communicative utility of `\(\theta\)` for `\(\kappa\)`
+
+`\(U(\theta, \kappa) = \sum_{d &lt; \theta} \kappa(d)\cdot {\color{red}{\kappa(d)}}  + \sum_{d \geq \theta} \kappa(d)\cdot {\color{blue}{\kappa(d \mid d \geq \theta)}} - c\cdot \kappa(d \geq \theta)\)`
+
+- A cost parameter `\(c\)` for uttering a GA 
+
+
+---
+
+# OTM: Open-scale adjectives
+
+John is tall (for a US adult male)
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-1-1.png" height="450px" /&gt;
+
+---
+
+# OTM: Open-scale adjectives
+
+John is tall (for a US adult male)
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-2-1.png" height="450px" /&gt;
+
+---
+
+# OTM: Open-scale adjectives
+
+John is tall (for an NBA player)
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-3-1.png" height="450px" /&gt;
+
+---
+
+# OTM: Open-scale adjectives
+
+John is tall (for an NBA player)
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-4-1.png" height="450px" /&gt;
+
+
+
+---
+
+# OTM: Closed-scale adjectives
+
+*Full*
+
+
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-6-1.png" height="450px" /&gt;
+
+
+---
+
+# OTM: Closed-scale adjectives
+
+*Full* (maximum standard)
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-7-1.png" height="450px" /&gt;
+
+---
+
+# OTM: Closed-scale adjectives
+
+*Full* (maximum standard) vs *dark*
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-8-1.png" height="450px" /&gt;
+
+---
+
+# OTM: Closed-scale adjectives
+
+*Full* (maximum standard) vs *dark* (relative standard)
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-9-1.png" height="450px" /&gt;
+
+---
+
+# Soft-maximization
+
+Positive form: `\([[A]]^C = \lambda x. \mu_A(x) \geq \theta_C\)`
+
+
+OTM: `\(\theta_C = \textbf{Opt}(\kappa) = \text{arg}\max_\theta U(\theta, \kappa)\)`
+
+
+&lt;br /&gt;
+--
+
+A more realistic version outputs a probability distribution over `\(\theta\)` by soft-maximizing the 
+communicative utility
+
+ `\(\Pr(\theta) = \textbf{Softmax}_\theta(U(\theta, \kappa);\, \lambda)\)`
+
+- Parameter `\(\lambda\)` controls the strictness of optimization
+
+- If `\(\lambda = 0\)`, `\(\theta\)` is completely chosen at random (no optimization)
+
+- If `\(\lambda = +\infty\)`, `\(\textbf{Softmax}\)` becomes `\(\text{arg}\max_\theta\)` (strict maximization)
+
+---
+
+# Testing OTM's predictions
+
+OTM makes precise, quantitative predictions about how the comparison distribution `\(\kappa\)` influences
+ the interpretation of a GA
+ 
+- `\(\Pr(\theta) = \textbf{Softmax}_\theta(U(\theta, \kappa);\, \lambda)\)`
+
+&lt;br /&gt;
+--
+
+The metasemantic problem for OTM:
+
+- Which comparison distribution `\(\kappa\)` to use in a given context?
+
+&lt;br /&gt;
+--
+
+Two influencing factors
+
+- General world knowledge about the degree distribution 
+
+--
+
+- Degree distribution in the immediate (visual) context
+(directly manipulated in Qing &amp; Franke, 2014b)
+
+.footnote[Qing, C., &amp; Franke, M. (2014b). Meaning and use of gradable adjectives: Formal modeling meets empirical data. *CogSci 2014*]
+
+---
+
+# Experimental design
+
+(Partial) replication of Solt &amp; Gotzner, 2012
+
+&lt;img src="./stimuliSG.png" height="250px" keepaspectratio /&gt;
+
+.footnote[Solt, S., &amp; Gotzner, N. (2012). Experimenting with degree. *SALT 22*]
+
+---
+
+# Manipulation of degree distributions
+
+&lt;img src="./stimuliConditionsSG.png" height="450px" /&gt;
+
+---
+
+# Replication in Qing &amp; Franke, 2014b
+
+&lt;img src="./stimuliExQF.png" height="300px" keepaspectratio /&gt;
+
+- Slightly different stimuli for *big*, *tall*, and *dark*
+
+- *Full* instead of *pointy*
+
+---
+
+# Replication: Qing &amp; Franke, 2014b
+
+&lt;img src="./stimuliQF.png" height="450px" /&gt;
+
+---
+
+# Results: Baseline
+
+
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-15-1.png" height="500px" /&gt;
+
+
+---
+
+# Results: Moved
+
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-16-1.png" height="500px" /&gt;
+
+---
+
+# Results: Left-leaning
+
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-17-1.png" height="500px" /&gt;
+
+---
+
+# Results: Right-leaning
+
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-18-1.png" height="500px" /&gt;
+
+
+
+---
+
+# Data analysis
+
+The OTM has two free parameters for each adjective
+
+- Rationality `\(\lambda\)` 
+
+- Cost `\(c\)` 
+
+&lt;br /&gt;
+
+--
+
+For *big*, *tall* and *dark*
+
+- Learned from Solt &amp; Gotzner's data via Bayesian statistical inference
+
+- Test model predictions against the replication data
+
+For *full*
+
+- Parameters learned and tested on the replication data
+
+---
+
+# Results: Solt &amp; Gotzner, 2012
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-19-1.png" height="500px" /&gt;
+
+
+
+---
+
+# Results: Model predictions
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-20-1.png" height="500px" /&gt;
+
+
+---
+
+# Results: Qing &amp; Franke, 2014b
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-21-1.png" height="500px" /&gt;
+
+
+
+---
+
+# Model evaluation
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-22-1.png" height="400px" /&gt;
+
+Overall `\(R^2 = 0.96\)` (and `\(0.9\)` if we only consider predicted probabilities between `\(.05\)` and `\(.95\)`), `\(p&lt;.001\)`
+
+
+---
+
+# Further analyses
+
+Posterior preditive check: 162 out of 176 cases passed (92%)
+
+&lt;br /&gt;
+--
+
+
+Is the cost parameter necessary?
+
+- Intuitively, uttering the GA should be more costly than saying nothing
+
+--
+
+- Does our data support this intuition?
+
+- Using the Savage–Dickey method for comparing nested models: Yes!
+
+
+---
+
+# Summary
+
+Interpretation of GAs is context sensitive
+
+- Challenge: Exactly how is `\(\theta_C\)` determined?
+
+&lt;br /&gt;
+--
+
+Optimal Threhsold Model: quantitative modeling of the interpretaion of GAs
+
+- A more precise characterization of the semantics: `\(\theta_C = \textbf{Opt}(\kappa)\)`
+
+- `\(\textbf{Opt}\)` is defined by (soft-)maximizing the communicative utility
+
+&lt;br /&gt;
+--
+
+A major advantage: sensitivity to distributional information is derivable in the formal semantics
+
+- Predictions are experimentally validated by directly manipulating the degree distribution in the immediate visual context
+
+
+---
+
+# Remaining issue
+
+The metasemantic problem for OTM:
+
+Which comparison distribution `\(\kappa\)` to use in a given context?
+
+- General world knowledge about the degree distribution 
+
+- Degree distribution in the immediate (visual) context  
+
+How are these two factors integrated?
+
+--
+
+Theorectical significance: This is crucial to empirically 
+ evaluating whether OTM can provide a unified semantics for 
+ relative and absolute adjectives
+
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Relative vs absolute adjectives  --&gt;
+
+&lt;!-- Although OTM can fit the data for *full* pretty well, the inferred  --&gt;
+&lt;!--  cost parameter is much higher than the other three adjectives --&gt;
+
+&lt;!-- - `\(\bar{c}_{\text{full}} = .158\)` (cf. `\(\bar{c}_{\text{big}} = .064\)`,  --&gt;
+&lt;!--  `\(\bar{c}_{\text{tall}} = .024\)`, `\(\bar{c}_{\text{dark}} = .054\)`) --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - No principled way to determine the cost parameter a priori --&gt;
+
+&lt;!-- - Not a very satisfactory account for the maximum-relative contrast --&gt;
+
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Relative vs absolute adjectives --&gt;
+
+&lt;!-- Source of the problem: the simplifying assumption that comparison distribution `\(\kappa\)` is identical to the degree distribution in the immediate visual context --&gt;
+
+&lt;!-- - Van Rooij (2011): Absolute adjectives are always interpreted wrt to the maximal comparison class, i.e., the whole domain.  --&gt;
+
+&lt;!-- - But this is a pure stipulation --&gt;
+
+
+
+
+
+
+---
+
+# New testbed: GAs in definite descriptions
+
+Fine-grained experimental investigation of Syrett, Kennedy, &amp; Lidz's (2009) Presupposition Assessment Task 
+ (Qing, 2019)
+
+*Click on the long pencil*
+
+&lt;img src="./pencilLong290.png" height="350px" /&gt;&lt;img src="./pencilLong330.png" height="350px" /&gt;
+
+
+---
+
+# Is this pencil long?
+
+&lt;img src="./pencilLong330.png" height="350px" /&gt;
+
+(degree = 330)
+
+Judgments based entirely on background world knowledge
+
+---
+
+# Is this pencil long?
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-25-1.png" height="450px" /&gt;
+
+p(Yes | degree = 330) ~ 25%, p(Yes | degree = 290) ~ 10%, etc.
+
+---
+
+# Click on the long pencil
+
+&lt;img src="./pencilLong290.png" height="350px" /&gt;&lt;img src="./pencilLong330.png" height="350px" /&gt;
+
+
+P(Yes | degree = 290) ~ 10%; P(Yes | degree = 330) ~ 25%
+
+---
+
+# Click on the long pencil
+
+
+&lt;img src="./pencilLong310.png" height="350px" /&gt;&lt;img src="./pencilLong330.png" height="350px" /&gt;
+
+dlow = 310, dhigh = 330: Crisp-judgment effect (Kennedy 2007)
+
+
+---
+
+# Click on the long pencil
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-28-1.png" height="450px" /&gt;
+
+Standard shifted, crisp-judgment effect
+
+---
+
+# Is this bottle full?
+
+&lt;img src="./bottleFull320.png" height="350px" /&gt;
+
+degree = 320
+
+---
+
+# Is this bottle full?
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-30-1.png" height="450px" /&gt;
+
+P(Yes | degree = 320) ~ 25%, P(Yes | degree = 220) &lt; 10%
+
+---
+
+# Click on the full bottle 
+
+&lt;img src="./bottleFull220.png" height="350px" /&gt;&lt;img src="./bottleFull320.png" height="350px" /&gt;
+
+dlow = 220, dhigh = 320
+
+P(Yes | degree = 220) &lt; 10%; P(Yes | degree = 320) ~ 25%
+
+
+---
+
+# Click on the full bottle 
+
+&lt;img src="probmodGA_files/figure-html/unnamed-chunk-32-1.png" height="450px" /&gt;
+
+Standard not shifted, crisp-judgment effect
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
